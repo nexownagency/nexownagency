@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nexown Agency — Premium Video Editing & Design</title>
+  <meta name="description" content="Nexown Agency helps brands look premium through Video Editing, Graphic Design and Social Media Marketing. 100+ projects delivered worldwide."/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: #0a0a0a; color: #f0ede6; }
+
+    /* NAV */
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 2rem; border-bottom: 0.5px solid #2a2a2a;
+      position: sticky; top: 0; background: #0a0a0aee; z-index: 99;
+      backdrop-filter: blur(10px);
+    }
+    .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; letter-spacing: 0.05em; color: #f0ede6; text-decoration: none; }
+    .logo span { color: #c8f04a; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { font-size: 13px; color: #888; text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: #f0ede6; }
+    .nav-cta {
+      background: #c8f04a; color: #0a0a0a; font-size: 13px; font-weight: 500;
+      padding: 8px 18px; border-radius: 20px; text-decoration: none;
+      border: none; cursor: pointer; font-family: 'DM Sans', sans-serif;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* HERO */
+    .hero {
+      padding: 5rem 2rem 4rem; max-width: 860px;
+      margin: 0 auto; text-align: center;
+    }
+    .badge {
+      display: inline-block; font-size: 11px; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #c8f04a;
+      border: 0.5px solid #c8f04a44; padding: 5px 14px;
+      border-radius: 20px; margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: 'Syne', sans-serif; font-size: clamp(2.2rem, 6vw, 3.8rem);
+      font-weight: 800; line-height: 1.1; margin-bottom: 1.2rem;
+    }
+    .hero h1 em { color: #c8f04a; font-style: normal; }
+    .hero p { font-size: 16px; color: #888; line-height: 1.7; max-width: 560px; margin: 0 auto 2rem; }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: #c8f04a; color: #0a0a0a; font-weight: 500; font-size: 14px;
+      padding: 12px 28px; border-radius: 24px; text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-outline {
+      background: transparent; color: #f0ede6; font-size: 14px;
+      padding: 12px 28px; border-radius: 24px; text-decoration: none;
+      border: 0.5px solid #333; transition: border-color 0.2s;
+    }
+    .btn-outline:hover { border-color: #c8f04a; }
+
+    /* STATS */
+    .stats {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: #1a1a1a; border: 0.5px solid #1a1a1a;
+      border-radius: 12px; margin: 3rem auto; max-width: 860px;
+      overflow: hidden;
+    }
+    .stat { background: #111; padding: 1.5rem; text-align: center; }
+    .stat-num { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: #c8f04a; }
+    .stat-label { font-size: 12px; color: #666; margin-top: 4px; }
+
+    /* SECTIONS */
+    section { padding: 3.5rem 2rem; max-width: 860px; margin: 0 auto; }
+    .section-tag { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #c8f04a; margin-bottom: 0.8rem; }
+    .section-title { font-family: 'Syne', sans-serif; font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 700; margin-bottom: 0.6rem; }
+    .section-sub { font-size: 15px; color: #666; line-height: 1.6; margin-bottom: 2.5rem; }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+    .about-card { background: #111; border: 0.5px solid #222; border-radius: 12px; padding: 1.5rem; }
+    .about-icon { font-size: 22px; margin-bottom: 0.8rem; }
+    .about-card h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .about-card p { font-size: 13px; color: #666; line-height: 1.6; }
+
+    /* SERVICES */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+    .service-card {
+      background: #111; border: 0.5px solid #222; border-radius: 12px;
+      padding: 1.5rem; transition: border-color 0.2s;
+    }
+    .service-card:hover { border-color: #c8f04a44; }
+    .service-num { font-family: 'Syne', sans-serif; font-size: 11px; color: #c8f04a; letter-spacing: 0.1em; margin-bottom: 0.8rem; }
+    .service-card h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .service-card p { font-size: 13px; color: #666; line-height: 1.6; }
+
+    /* PORTFOLIO */
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .portfolio-item { background: #111; border: 0.5px solid #222; border-radius: 12px; padding: 1.5rem; }
+    .portfolio-tag { font-size: 11px; color: #c8f04a; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+    .portfolio-item h3 { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .portfolio-item p { font-size: 12px; color: #666; }
+    .portfolio-result {
+      margin-top: 0.8rem; font-size: 12px; background: #c8f04a15;
+      border: 0.5px solid #c8f04a33; color: #c8f04a;
+      padding: 4px 10px; border-radius: 20px; display: inline-block;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .testi-card { background: #111; border: 0.5px solid #222; border-radius: 12px; padding: 1.5rem; }
+    .testi-stars { color: #c8f04a; font-size: 13px; margin-bottom: 0.8rem; }
+    .testi-text { font-size: 13px; color: #aaa; line-height: 1.7; margin-bottom: 1rem; font-style: italic; }
+    .testi-author { display: flex; align-items: center; gap: 10px; }
+    .testi-avatar {
+      width: 32px; height: 32px; border-radius: 50%; background: #c8f04a;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700; color: #0a0a0a; flex-shrink: 0;
+    }
+    .testi-name { font-size: 13px; font-weight: 500; }
+    .testi-role { font-size: 11px; color: #555; }
+
+    /* CONTACT */
+    .contact-box {
+      background: #111; border: 0.5px solid #222; border-radius: 16px;
+      padding: 3rem 2rem; text-align: center;
+    }
+    .contact-box h2 { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; margin-bottom: 0.8rem; }
+    .contact-box h2 em { color: #c8f04a; font-style: normal; }
+    .contact-box p { font-size: 15px; color: #666; margin-bottom: 2rem; }
+    .contact-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .contact-link {
+      background: #1a1a1a; border: 0.5px solid #333; color: #f0ede6;
+      padding: 10px 22px; border-radius: 20px; font-size: 13px;
+      text-decoration: none; transition: border-color 0.2s;
+    }
+    .contact-link:hover { border-color: #c8f04a; }
+    .contact-link.primary { background: #c8f04a; color: #0a0a0a; border-color: #c8f04a; font-weight: 500; }
+
+    /* FOOTER */
+    footer {
+      border-top: 0.5px solid #1a1a1a; padding: 1.5rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 12px; color: #444; max-width: 860px; margin: 0 auto;
+      flex-wrap: wrap; gap: 0.5rem;
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      nav { padding: 1rem; }
+      .nav-links { display: none; }
+      .hero { padding: 3rem 1.2rem 2rem; }
+      .stats { margin: 2rem 1.2rem; }
+      section { padding: 2.5rem 1.2rem; }
+      .contact-box { padding: 2rem 1.2rem; }
+      footer { padding: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="logo">NEXOWN<span>.</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Work</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">Get Free Audit</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="badge">Premium Creative Agency</div>
+    <h1>We Make Brands<br><em>Look Premium.</em></h1>
+    <p>Video Editing, Graphic Design & Social Media Marketing — helping businesses stand out and attract more clients worldwide.</p>
+    <div class="hero-btns">
+      <a href="#portfolio" class="btn-primary">See Our Work</a>
+      <a href="#contact" class="btn-outline">Let's Talk</a>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">100+</div>
+      <div class="stat-label">Projects Delivered</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">50+</div>
+      <div class="stat-label">Happy Clients</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-tag">Who We Are</div>
+    <div class="section-title">Your Gateway to Innovation</div>
+    <div class="section-sub">Nexown Agency is a full-service creative studio helping brands grow through premium visual content and strategic marketing.</div>
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="about-icon">🎯</div>
+        <h3>Result-Driven</h3>
+        <p>Every project we take is focused on delivering real, measurable results for your business.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-icon">🌍</div>
+        <h3>Global Reach</h3>
+        <p>We work with brands across Pakistan and internationally, serving clients worldwide.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-icon">⚡</div>
+        <h3>Fast Delivery</h3>
+        <p>Quick turnarounds without compromising on quality — because your time is valuable.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-icon">💎</div>
+        <h3>Premium Quality</h3>
+        <p>We don't do average. Every deliverable is crafted to the highest standard.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-tag">What We Do</div>
+    <div class="section-title">Our Services</div>
+    <div class="section-sub">Everything your brand needs to look professional and attract more clients.</div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <h3>Video Editing</h3>
+        <p>Reels, YouTube content, brand videos — edited to perfection that stops the scroll.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <h3>Graphic Design</h3>
+        <p>Logos, brand identity, social media posts — visuals that make your brand memorable.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <h3>Social Media Marketing</h3>
+        <p>Strategy, content creation and management to grow your audience and generate leads.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <h3>Meta & Google Ads</h3>
+        <p>Paid advertising that brings real customers to your business with proven ROI.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="section-tag">Our Work</div>
+    <div class="section-title">Recent Projects</div>
+    <div class="section-sub">A glimpse of what we've delivered for our clients.</div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <div class="portfolio-tag">BRANDING</div>
+        <h3>Khurci Real Estate</h3>
+        <p>Full brand identity — 17 custom designs for a consistent, professional look.</p>
+        <div class="portfolio-result">40% more engagement</div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-tag">VIDEO EDITING</div>
+        <h3>eCommerce Brand Reels</h3>
+        <p>Short-form video content optimized for Instagram and TikTok growth.</p>
+        <div class="portfolio-result">3x reach increase</div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-tag">SOCIAL MEDIA</div>
+        <h3>Startup Launch Campaign</h3>
+        <p>Full content strategy and execution from zero to first 10K followers.</p>
+        <div class="portfolio-result">10K followers in 60 days</div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-tag">GRAPHIC DESIGN</div>
+        <h3>Skincare Brand Identity</h3>
+        <p>Complete visual system for a skincare brand entering the market.</p>
+        <div class="portfolio-result">Launched successfully</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="section-tag">Client Love</div>
+    <div class="section-title">What Clients Say</div>
+    <div class="testimonials-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Nexown transformed our brand completely. Our content now looks world-class and we're getting more inquiries than ever."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">AK</div>
+          <div>
+            <div class="testi-name">Ahmed Khan</div>
+            <div class="testi-role">Real Estate Agency Owner</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Fast delivery, premium quality. They understood our vision perfectly and delivered beyond expectations."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">SR</div>
+          <div>
+            <div class="testi-name">Sara Rizvi</div>
+            <div class="testi-role">eCommerce Brand Founder</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Best investment for our startup. Our social media presence went from zero to 10K in just 2 months!"</div>
+        <div class="testi-author">
+          <div class="testi-avatar">FM</div>
+          <div>
+            <div class="testi-name">Farhan Malik</div>
+            <div class="testi-role">Tech Startup CEO</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-box">
+      <h2>Ready to Look <em>Premium?</em></h2>
+      <p>Let's talk about your brand and how we can help you grow. Free audit — no strings attached.</p>
+      <div class="contact-links">
+        <a class="contact-link primary" href="https://instagram.com/nexownagency" target="_blank">DM on Instagram</a>
+        <a class="contact-link" href="https://www.youtube.com/@nexownagency" target="_blank">YouTube</a>
+        <a class="contact-link" href="mailto:nexownagency@gmail.com">Email Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2025 Nexown Agency. All rights reserved.</span>
+    <span>Karachi, Pakistan · Serving Worldwide</span>
+  </footer>
+
+</body>
+</html>
